@@ -29,11 +29,11 @@
     "types/vue-injections.d.ts"
   ],
   "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@babel/preset-env": "^7.6.3",
-    "babel-loader": "^8.0.6",
-    "eslint": "^6.6.0",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.5"
+    "@babel/core": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "babel-loader": "^8.1.0",
+    "eslint": "^7.7.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
   }
 }
