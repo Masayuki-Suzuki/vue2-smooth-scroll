@@ -1,5 +1,4 @@
-import Vue, { PluginFunction } from "vue";
-
+import { PluginFunction } from "vue";
 // augment typings of Vue.js
 import "./vue-injections";
 
@@ -13,5 +12,5 @@ export interface SmoothScrollOptions {
 }
 
 declare const Vue2SmoothScroll: PluginFunction<SmoothScrollOptions>;
-
+export declare const ScrollSymbol: Symbol;
 export default Vue2SmoothScroll;

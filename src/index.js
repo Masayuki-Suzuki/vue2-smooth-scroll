@@ -77,6 +77,11 @@ function _smoothScroll({
   step();
 }
 
+const $smoothScroll = (args) => {
+  const resolvedArgs = Object.assign({}, getDefaultConfig(), config, args);
+  return _smoothScroll(resolvedArgs);
+};
+
 const VueSmoothScroll = {
   install(Vue, config) {
     Vue.directive("smooth-scroll", {
@@ -137,12 +142,9 @@ const VueSmoothScroll = {
       },
     });
 
-    Vue.config.globalProperties.$smoothScroll = (args) => {
-      const resolvedArgs = Object.assign({}, getDefaultConfig(), config, args);
-      return _smoothScroll(resolvedArgs);
-    };
+    Vue.config.globalProperties.$smoothScroll = $smoothScroll;
 
-    Vue.provide(ScrollSymbol, Vue.config.globalProperties.$smoothScroll);
+    Vue.provide(ScrollSymbol, $smoothScroll);
   },
 };
 
