@@ -138,7 +138,6 @@ const VueSmoothScroll = {
     });
 
     Vue.config.globalProperties.$smoothScroll = (args) => {
-      console.log(args);
       const resolvedArgs = Object.assign({}, getDefaultConfig(), config, args);
       return _smoothScroll(resolvedArgs);
     };
