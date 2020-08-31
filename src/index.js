@@ -77,9 +77,11 @@ function _smoothScroll({
   step();
 }
 
-const $smoothScroll = (args) => {
-  const resolvedArgs = Object.assign({}, getDefaultConfig(), config, args);
-  return _smoothScroll(resolvedArgs);
+const getSmoothScrollInstance = (config) => {
+  return (args) => {
+    const resolvedArgs = Object.assign({}, getDefaultConfig(), config, args);
+    return _smoothScroll(resolvedArgs);
+  };
 };
 
 const VueSmoothScroll = {
@@ -142,9 +144,9 @@ const VueSmoothScroll = {
       },
     });
 
-    Vue.config.globalProperties.$smoothScroll = $smoothScroll;
+    Vue.config.globalProperties.$smoothScroll = getSmoothScrollInstance(config);
 
-    Vue.provide(ScrollSymbol, $smoothScroll);
+    Vue.provide(ScrollSymbol, getSmoothScrollInstance(config));
   },
 };
 
